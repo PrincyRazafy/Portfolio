@@ -1,6 +1,6 @@
 <template>
   <section
-    class="contact-section min-vh-100 d-flex align-items-center"
+    class="contact-section min-vh-100 d-flex align-items-center animate-section"
     id="contact"
   >
     <div class="container">
@@ -50,7 +50,7 @@
         </div>
 
         <!-- Formulaire -->
-        <div class="col-lg-7">
+        <div class="pb-5 col-lg-7">
           <div class="p-5 shadow-2xl glass-card p-xl-6">
             <form
               @submit.prevent="submitForm"

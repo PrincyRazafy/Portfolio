@@ -1,22 +1,22 @@
 <template>
   <section
     id="projet"
-    class="section-full-height d-flex flex-column align-items-center py-5"
-    style="position: relative; background-color: #121212"
+    class="py-8 sm:py-12 lg:py-16 min-h-screen flex flex-col items-center relative bg-[#121212] overflow-hidden"
   >
-    <!-- Fond radial violet flou conservé mais légèrement adouci -->
     <div class="projects-background"></div>
 
-    <h1 class="title glow">My Projects</h1>
+    <h1 class="mb-10 text-4xl title glow sm:text-5xl lg:text-6xl sm:mb-16">
+      My Projects
+    </h1>
 
-    <div class="swiper-container">
+    <div class="w-full swiper-container">
       <swiper
         :modules="modules"
-        :effect="'coverflow'"
-        :grab-cursor="true"
-        :centered-slides="true"
+        effect="coverflow"
+        grab-cursor
+        centered-slides
         :slides-per-view="'auto'"
-        :loop="true"
+        loop
         :autoplay="{
           delay: 3000,
           disableOnInteraction: false,
@@ -35,23 +35,26 @@
         }"
         class="my-swiper"
       >
+        <!-- Projet 1 - Réel -->
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
               <img
                 src="@/assets/LLRA.png"
-                alt="Projet 1"
-                class="w-full h-full object-cover"
+                alt="EducTrack"
+                class="object-cover w-full h-full"
               />
             </div>
             <div class="card-content">
               <h3>EducTrack</h3>
               <p>
-                Application desktop dédiée à la gestion scolaire du le Lycée
+                Application desktop dédiée à la gestion scolaire du Lycée
                 Loterana Rakoto Andrianarijaona (LLRA).
               </p>
               <div class="tags">
                 <span>#Java</span>
+                <span>#Swing</span>
+                <span>#MySQL</span>
               </div>
               <div class="links">
                 <a href="#" target="_blank">View Code</a>
@@ -59,40 +62,26 @@
             </div>
           </div>
         </swiper-slide>
+
+        <!-- Projet 2 -->
         <swiper-slide class="project-slide">
           <div class="card">
             <div
               class="card-image"
               style="
-                background-image: url('https://via.placeholder.com/800x600?text=Projet+1');
+                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=Portfolio+Site&quot;);
               "
             ></div>
             <div class="card-content">
-              <h3>Projet 2</h3>
-              <p>Description du projet...</p>
+              <h3>Portfolio Personnel</h3>
+              <p>
+                Site web moderne et animé présentant mes compétences et projets
+                (ce site !).
+              </p>
               <div class="tags">
-                <span>#Vue.js</span><span>#Tailwind</span><span>#Firebase</span>
-              </div>
-              <div class="links">
-                <a href="#" target="_blank">Live Demo</a>
-                <a href="#" target="_blank">View Code</a>
-              </div>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="project-slide">
-          <div class="card">
-            <div
-              class="card-image"
-              style="
-                background-image: url('https://via.placeholder.com/800x600?text=Projet+1');
-              "
-            ></div>
-            <div class="card-content">
-              <h3>Projet 3</h3>
-              <p>Description du projet...</p>
-              <div class="tags">
-                <span>#Vue.js</span><span>#Tailwind</span><span>#Firebase</span>
+                <span>#Vue.js</span>
+                <span>#Tailwind CSS</span>
+                <span>#Swiper</span>
               </div>
               <div class="links">
                 <a href="#" target="_blank">Live Demo</a>
@@ -101,19 +90,27 @@
             </div>
           </div>
         </swiper-slide>
+
+        <!-- Projet 3 -->
         <swiper-slide class="project-slide">
           <div class="card">
             <div
               class="card-image"
               style="
-                background-image: url('https://via.placeholder.com/800x600?text=Projet+1');
+                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=E-commerce+App&quot;);
               "
             ></div>
             <div class="card-content">
-              <h3>Projet 4</h3>
-              <p>Description du projet...</p>
+              <h3>E-Shop Demo</h3>
+              <p>
+                Boutique en ligne avec panier, authentification et paiement
+                simulé.
+              </p>
               <div class="tags">
-                <span>#Vue.js</span><span>#Tailwind</span><span>#Firebase</span>
+                <span>#Vue.js</span>
+                <span>#Pinia</span>
+                <span>#Tailwind</span>
+                <span>#Firebase</span>
               </div>
               <div class="links">
                 <a href="#" target="_blank">Live Demo</a>
@@ -122,19 +119,56 @@
             </div>
           </div>
         </swiper-slide>
+
+        <!-- Projet 4 -->
         <swiper-slide class="project-slide">
           <div class="card">
             <div
               class="card-image"
               style="
-                background-image: url('https://via.placeholder.com/800x600?text=Projet+1');
+                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=Task+Manager&quot;);
               "
             ></div>
             <div class="card-content">
-              <h3>Projet 5</h3>
-              <p>Description du projet...</p>
+              <h3>TaskFlow</h3>
+              <p>
+                Gestionnaire de tâches collaboratif avec drag & drop et
+                notifications en temps réel.
+              </p>
               <div class="tags">
-                <span>#Vue.js</span><span>#Tailwind</span><span>#Firebase</span>
+                <span>#Vue.js</span>
+                <span>#VueUse</span>
+                <span>#Supabase</span>
+                <span>#Tailwind</span>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank">Live Demo</a>
+                <a href="#" target="_blank">View Code</a>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <!-- Projet 5 -->
+        <swiper-slide class="project-slide">
+          <div class="card">
+            <div
+              class="card-image"
+              style="
+                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=Weather+App&quot;);
+              "
+            ></div>
+            <div class="card-content">
+              <h3>Meteo Madagascar</h3>
+              <p>
+                Application météo avec prévisions sur 7 jours, localisation et
+                thèmes jour/nuit.
+              </p>
+              <div class="tags">
+                <span>#Vue.js</span>
+                <span>#OpenWeather API</span>
+                <span>#Tailwind</span>
+                <span>#PWA</span>
               </div>
               <div class="links">
                 <a href="#" target="_blank">Live Demo</a>
@@ -158,143 +192,198 @@ const modules = [Navigation, EffectCoverflow, Autoplay];
 </script>
 
 <style scoped>
-.section-full-height {
+/* ────────────────────────────────────────────── */
+.min-h-screen {
   min-height: 100vh;
-  width: 100%;
-  color: white;
-  overflow: hidden;
 }
-
-/* Fond violet flou légèrement réduit en intensité pour ne pas écraser les nouveaux tons cyan */
 .projects-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: radial-gradient(
     circle at 70% 40%,
-    rgba(128, 0, 255, 0.25),
-    transparent 50%
+    rgba(128, 0, 255, 0.22),
+    transparent 55%
   );
-  filter: blur(120px);
+  filter: blur(100px);
   z-index: 0;
+  pointer-events: none;
 }
 
 .title {
-  font-size: 4rem;
   font-weight: bold;
-  margin: 2rem 0 4rem;
   text-align: center;
   position: relative;
   z-index: 1;
-  color: #00f2ea; /* Cyan néon principal */
-}
-
-.glow {
-  text-shadow: 0 0 20px #00f2ea, 0 0 40px #00f2ea,
-    0 0 60px rgba(0, 242, 234, 0.6);
+  color: #00f2ea;
+  text-shadow:
+    0 0 20px #00f2ea,
+    0 0 40px #00f2ea,
+    0 0 60px rgba(0, 242, 234, 0.5);
 }
 
 .swiper-container {
-  width: 100%;
-  max-width: 1700px;
-  padding: 0 150px;
   position: relative;
   z-index: 1;
+  padding: 0 1.5rem; /* mobile */
+}
+
+@media (min-width: 640px) {
+  .swiper-container {
+    padding: 0 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .swiper-container {
+    padding: 0 8rem;
+    max-width: 1700px;
+    margin: 0 auto;
+  }
 }
 
 .my-swiper {
-  padding: 60px 0;
+  padding: 3rem 0;
 }
 
+/* Cartes responsive */
 .project-slide {
-  width: 420px !important;
-  height: 570px;
-  opacity: 0.35;
-  transform: scale(0.75);
-  transition: all 0.7s ease;
+  width: 280px !important;
+  height: 420px;
+  opacity: 0.45;
+  transform: scale(0.82);
+  transition: all 0.6s ease;
+}
+
+@media (min-width: 640px) {
+  .project-slide {
+    width: 340px !important;
+    height: 480px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-slide {
+    width: 420px !important;
+    height: 570px;
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
 }
 
 .project-slide.swiper-slide-active {
-  opacity: 1;
-  transform: scale(1);
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
 
 .card {
   width: 100%;
   height: 100%;
-  background: rgba(
-    0,
-    242,
-    234,
-    0.05
-  ); /* Légère teinte cyan dans le fond verre */
-  border-radius: 32px;
+  background: rgba(0, 242, 234, 0.05);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 242, 234, 0.3); /* Bordure cyan */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 242, 234, 0.25);
   display: flex;
   flex-direction: column;
 }
 
+@media (min-width: 1024px) {
+  .card {
+    border-radius: 32px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+  }
+}
+
 .card-image {
-  height: 62%;
+  height: 60%;
   background-size: cover;
   background-position: center;
 }
-
 .card-content {
-  padding: 2.2rem;
+  padding: 1.5rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
+}
+
+@media (min-width: 1024px) {
+  .card-content {
+    padding: 2.2rem;
+  }
 }
 
 .card-content h3 {
-  font-size: 2.3rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
   color: #00f2ea;
 }
 
+@media (min-width: 1024px) {
+  .card-content h3 {
+    font-size: 2.3rem;
+  }
+}
+
 .card-content p {
+  font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 1.5rem;
-  font-size: 1.15rem;
+  margin-bottom: 1rem;
   color: #e0e0e0;
+}
+
+@media (min-width: 1024px) {
+  .card-content p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .tags span {
-  background: rgba(0, 242, 234, 0.2);
+  background: rgba(0, 242, 234, 0.18);
   color: #00f2ea;
-  padding: 0.6rem 1.4rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  border: 1px solid rgba(0, 242, 234, 0.4);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 242, 234, 0.3);
+}
+
+@media (min-width: 1024px) {
+  .tags {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .tags span {
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+  }
 }
 
 .links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .links a {
   color: #00f2ea;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   position: relative;
   transition: all 0.3s ease;
+}
+
+.links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00f2ea;
 }
 
 .links a::after {
@@ -308,40 +397,65 @@ const modules = [Navigation, EffectCoverflow, Autoplay];
   transition: width 0.3s ease;
 }
 
-.links a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px #00f2ea;
-}
-
 .links a:hover::after {
   width: 100%;
 }
 
-/* Flèches de navigation en cyan */
+/* Flèches responsive */
 .swiper-button-prev,
 .swiper-button-next {
-  width: 70px;
-  height: 70px;
+  width: 48px;
+  height: 48px;
   background: #00f2ea;
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
-  box-shadow: 0 0 40px rgba(0, 242, 234, 0.8);
-  z-index: 2;
+  box-shadow: 0 0 25px rgba(0, 242, 234, 0.7);
+  z-index: 10;
 }
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  font-size: 32px;
+  font-size: 20px !important;
   color: #000;
   font-weight: bold;
 }
 
-.swiper-button-prev {
-  left: 50px;
+@media (min-width: 1024px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 0 40px rgba(0, 242, 234, 0.8);
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 32px !important;
+  }
 }
 
+.swiper-button-prev {
+  left: 8px;
+}
 .swiper-button-next {
-  right: 50px;
+  right: 8px;
+}
+
+@media (min-width: 640px) {
+  .swiper-button-prev {
+    left: 20px;
+  }
+  .swiper-button-next {
+    right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-button-prev {
+    left: 50px;
+  }
+  .swiper-button-next {
+    right: 50px;
+  }
 }
 </style>

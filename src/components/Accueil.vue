@@ -1,6 +1,6 @@
 <template>
   <section
-    class="accueil d-flex align-items-center justify-content-center"
+    class="accueil d-flex align-items-center justify-content-center animate-section"
     id="accueil"
   >
     <div class="text-center glass">

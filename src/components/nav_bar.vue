@@ -1,15 +1,18 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg navbar-dark bg-dark px-4 fixed-bottom fixed-lg-top"
+    class="px-4 navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom fixed-lg-top"
   >
     <div class="container-fluid d-flex justify-content-between">
       <button class="btn btn-outline-light me-3" @click="CV">
-        Download CV
+        <span class="d-none d-lg-inline">Download CV</span>
+        <span class="d-inline d-lg-none">CV</span>
       </button>
 
-      <ul class="navbar-nav ms-auto gap-3 d-flex flex-row flex-lg-row">
-        <li v-for="(item, index) in items" :key="index" class="nav-item">
-          <a class="nav-link" :href="lien[index]">{{ item }}</a>
+      <ul class="flex-row gap-3 navbar-nav ms-auto d-flex">
+        <li v-for="item in filteredItems" :key="item.href" class="nav-item">
+          <a class="nav-link" :href="item.href">
+            {{ item.label }}
+          </a>
         </li>
       </ul>
     </div>
@@ -18,11 +21,43 @@
 
 <script setup>
 import Swal from "sweetalert2";
-import { ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 
-const items = ref(["Accueil", "About", "Skills", "Projet", "Contact"]);
+const navItems = [
+  { label: "Accueil", href: "#accueil" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projet", href: "#projet" },
+  { label: "Contact", href: "#contact" },
+];
 
-const lien = ref(["#accueil", "#about", "#skills", "#projet", "#contact"]);
+const activeHash = ref(window.location.hash || "#accueil");
+const isMobile = ref(window.innerWidth < 992);
+
+const handleResize = () => {
+  isMobile.value = window.innerWidth < 992;
+};
+
+const handleHashChange = () => {
+  activeHash.value = window.location.hash;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("hashchange", handleHashChange);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+  window.removeEventListener("hashchange", handleHashChange);
+});
+
+/* ✅ Index SAFE */
+const filteredItems = computed(() => {
+  if (!isMobile.value) return navItems;
+
+  return navItems.filter((item) => item.href !== activeHash.value);
+});
 
 function CV() {
   Swal.fire({
@@ -30,9 +65,7 @@ function CV() {
     text: "Le bouton n’est pas encore fonctionnel...",
     timer: 2000,
     timerProgressBar: true,
-    didOpen: () => {
-      Swal.showLoading();
-    },
+    didOpen: () => Swal.showLoading(),
   });
 }
 </script>
