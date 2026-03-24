@@ -4,7 +4,7 @@
     class="py-8 sm:py-12 lg:py-16 min-h-screen flex flex-col items-center relative bg-[#121212] overflow-hidden"
   >
     <div class="projects-background"></div>
-
+    <br />
     <h1 class="mb-10 text-4xl title glow sm:text-5xl lg:text-6xl sm:mb-16">
       My Projects
     </h1>
@@ -35,7 +35,7 @@
         }"
         class="my-swiper"
       >
-        <!-- Projet 1 - Réel -->
+        <!-- eductrack -->
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
@@ -53,8 +53,7 @@
               </p>
               <div class="tags">
                 <span>#Java</span>
-                <span>#Swing</span>
-                <span>#MySQL</span>
+                <span>#PostgreSql</span>
               </div>
               <div class="links">
                 <a href="#" target="_blank">View Code</a>
@@ -62,117 +61,133 @@
             </div>
           </div>
         </swiper-slide>
-
-        <!-- Projet 2 -->
+        <!-- Portfolio -->
         <swiper-slide class="project-slide">
           <div class="card">
-            <div
-              class="card-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=Portfolio+Site&quot;);
-              "
-            ></div>
+            <div class="card-image">
+              <img
+                src="@/assets/portfolio.png"
+                alt="Portfolio"
+                class="object-cover w-full h-full"
+              />
+            </div>
             <div class="card-content">
               <h3>Portfolio Personnel</h3>
               <p>
-                Site web moderne et animé présentant mes compétences et projets
-                (ce site !).
+                Portfolio personnel moderne et animé présentant mes compétences
+                et projets.
               </p>
               <div class="tags">
                 <span>#Vue.js</span>
                 <span>#Tailwind CSS</span>
-                <span>#Swiper</span>
               </div>
               <div class="links">
-                <a href="#" target="_blank">Live Demo</a>
+                <a
+                  href="https://portfolio-princy-razafindrainibe.vercel.app/"
+                  target="_blank"
+                  >Live Demo</a
+                >
+                <a
+                  href="https://github.com/PrincyRazafy/Portfolio.git"
+                  target="_blank"
+                  >View Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <!-- eductrack -->
+        <swiper-slide class="project-slide">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="@/assets/LLRA.png"
+                alt="EducTrack"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div class="card-content">
+              <h3>EducTrack</h3>
+              <p>
+                Application desktop dédiée à la gestion scolaire du Lycée
+                Loterana Rakoto Andrianarijaona (LLRA).
+              </p>
+              <div class="tags">
+                <span>#Java</span>
+                <span>#PostgreSql</span>
+              </div>
+              <div class="links">
                 <a href="#" target="_blank">View Code</a>
               </div>
             </div>
           </div>
         </swiper-slide>
-
-        <!-- Projet 3 -->
+        <!-- Portfolio -->
         <swiper-slide class="project-slide">
           <div class="card">
-            <div
-              class="card-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=E-commerce+App&quot;);
-              "
-            ></div>
+            <div class="card-image">
+              <img
+                src="@/assets/portfolio.png"
+                alt="Portfolio"
+                class="object-cover w-full h-full"
+              />
+            </div>
             <div class="card-content">
-              <h3>E-Shop Demo</h3>
+              <h3>Portfolio Personnel</h3>
               <p>
-                Boutique en ligne avec panier, authentification et paiement
-                simulé.
+                Portfolio personnel moderne et animé présentant mes compétences
+                et projets.
               </p>
               <div class="tags">
                 <span>#Vue.js</span>
-                <span>#Pinia</span>
-                <span>#Tailwind</span>
-                <span>#Firebase</span>
+                <span>#Tailwind CSS</span>
               </div>
               <div class="links">
-                <a href="#" target="_blank">Live Demo</a>
-                <a href="#" target="_blank">View Code</a>
+                <a
+                  href="https://portfolio-princy-razafindrainibe.vercel.app/"
+                  target="_blank"
+                  >Live Demo</a
+                >
+                <a
+                  href="https://github.com/PrincyRazafy/Portfolio.git"
+                  target="_blank"
+                  >View Code</a
+                >
               </div>
             </div>
           </div>
         </swiper-slide>
-
-        <!-- Projet 4 -->
+        <!-- Portfolio -->
         <swiper-slide class="project-slide">
           <div class="card">
-            <div
-              class="card-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=Task+Manager&quot;);
-              "
-            ></div>
-            <div class="card-content">
-              <h3>TaskFlow</h3>
-              <p>
-                Gestionnaire de tâches collaboratif avec drag & drop et
-                notifications en temps réel.
-              </p>
-              <div class="tags">
-                <span>#Vue.js</span>
-                <span>#VueUse</span>
-                <span>#Supabase</span>
-                <span>#Tailwind</span>
-              </div>
-              <div class="links">
-                <a href="#" target="_blank">Live Demo</a>
-                <a href="#" target="_blank">View Code</a>
-              </div>
+            <div class="card-image">
+              <img
+                src="@/assets/portfolio.png"
+                alt="Portfolio"
+                class="object-cover w-full h-full"
+              />
             </div>
-          </div>
-        </swiper-slide>
-
-        <!-- Projet 5 -->
-        <swiper-slide class="project-slide">
-          <div class="card">
-            <div
-              class="card-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/800x600/1e293b/00f2ea?text=Weather+App&quot;);
-              "
-            ></div>
             <div class="card-content">
-              <h3>Meteo Madagascar</h3>
+              <h3>Portfolio Personnel</h3>
               <p>
-                Application météo avec prévisions sur 7 jours, localisation et
-                thèmes jour/nuit.
+                Portfolio personnel moderne et animé présentant mes compétences
+                et projets.
               </p>
               <div class="tags">
                 <span>#Vue.js</span>
-                <span>#OpenWeather API</span>
-                <span>#Tailwind</span>
-                <span>#PWA</span>
+                <span>#Tailwind CSS</span>
               </div>
               <div class="links">
-                <a href="#" target="_blank">Live Demo</a>
-                <a href="#" target="_blank">View Code</a>
+                <a
+                  href="https://portfolio-princy-razafindrainibe.vercel.app/"
+                  target="_blank"
+                  >Live Demo</a
+                >
+                <a
+                  href="https://github.com/PrincyRazafy/Portfolio.git"
+                  target="_blank"
+                  >View Code</a
+                >
               </div>
             </div>
           </div>
@@ -192,7 +207,6 @@ const modules = [Navigation, EffectCoverflow, Autoplay];
 </script>
 
 <style scoped>
-/* ────────────────────────────────────────────── */
 .min-h-screen {
   min-height: 100vh;
 }

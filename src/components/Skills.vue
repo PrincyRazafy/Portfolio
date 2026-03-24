@@ -39,14 +39,14 @@ const skills = [
   { name: "JavaScript", src: "/icons/javascript.svg" },
   { name: "React", src: "/icons/react.svg" },
   { name: "Vue.js", src: "/icons/vuejs.svg" },
-  { name: "Tailwind CSS", src: "/icons/tailwindcss.svg" },
+  { name: "Figma", src: "/icons/figma.svg" },
   { name: "Laravel", src: "/icons/laravel.svg" },
   { name: "PHP", src: "/icons/php.svg" },
   { name: "Java", src: "/icons/java.svg" },
   { name: "C#", src: "/icons/csharp.svg" },
+  { name: "Unity", src: "/icons/Unity.svg" },
   { name: "MySQL", src: "/icons/mysql.svg" },
   { name: "PostgreSQL", src: "/icons/postgresql.svg" },
-  { name: "Figma", src: "/icons/figma.svg" },
   { name: "GitHub", src: "/icons/github.svg" },
   { name: "Git", src: "/icons/git.svg" },
   { name: "Python", src: "/icons/python.svg" },
@@ -81,7 +81,7 @@ onMounted(() => {
         observer.disconnect();
       }
     },
-    { threshold: 0 }
+    { threshold: 0 },
   );
 
   if (skillsSection.value) observer.observe(skillsSection.value);

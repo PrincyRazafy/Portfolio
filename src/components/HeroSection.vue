@@ -11,10 +11,14 @@
         <h1 class="display-4 fw-bold">
           Hi, I'm <span class="text-warning">Princy</span>
         </h1>
+        <br />
         <p class="lead">
-          Currently in my 2nd year at the National School of Informatics in
+          Currently in my 3rd year at the National School of Informatics in
           Fianarantsoa, I specialize in software engineering and databases.
         </p>
+        <br />
+        <p class="lead">Passionate about programming and game development.</p>
+        <br />
         <div class="social-links">
           <a
             href="https://web.facebook.com/princy.ramanantsoa.1"
@@ -69,7 +73,7 @@ onMounted(() => {
     },
     {
       threshold: [0.45],
-    }
+    },
   );
 
   if (heroSection.value) {
