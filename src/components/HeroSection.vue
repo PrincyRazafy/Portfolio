@@ -54,16 +54,7 @@
             <img src="@/assets/icons/linkedin.png" alt="linkedin" />
           </a>
         </div>
-        <a
-          href="@/assets/cv.pdf"
-          class="download-cv"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          @click="CV"
-        >
-          Download CV
-        </a>
+        <a class="download-cv" @click="CV"> Download CV </a>
       </div>
       <div class="hero-image-container" :class="{ 'animate-in': isVisible }">
         <img :src="profileImage" alt="profile" class="profile-img" />
