@@ -52,7 +52,6 @@ onUnmounted(() => {
   window.removeEventListener("hashchange", handleHashChange);
 });
 
-/* ✅ Index SAFE */
 const filteredItems = computed(() => {
   if (!isMobile.value) return navItems;
 

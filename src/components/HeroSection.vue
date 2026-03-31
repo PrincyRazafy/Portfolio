@@ -1,7 +1,7 @@
 <template>
   <section
     class="hero-section"
-    id="about"
+    id="accueil"
     ref="heroSection"
     :class="{ 'animate-in': isVisible }"
   >
@@ -16,12 +16,13 @@
           Currently in my 3rd year at the National School of Informatics in
           Fianarantsoa, I specialize in software engineering and databases.
         </p>
-        <br />
-        <p class="lead">Passionate about programming and game development.</p>
+        <p class="lead">
+          Passionate about programming, game development and robotics.
+        </p>
         <br />
         <div class="social-links">
           <a
-            href="https://web.facebook.com/princy.ramanantsoa.1"
+            href="https://web.facebook.com/profile.php?id=61576537591892"
             class="social-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,12 +30,20 @@
             <img src="@/assets/icons/facebook.png" alt="facebook" />
           </a>
           <a
-            href="#"
+            href="https://github.com/PrincyRazafy"
             class="social-link"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="@/assets/icons/instagram.png" alt="instagram" />
+            <img src="@/assets/icons/github.png" alt="github" />
+          </a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=princyyrazafindrainibe@gmail.com"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="@/assets/icons/gmail.png" alt="gmail" />
           </a>
           <a
             href="www.linkedin.com/in/princy-razafy-981b3a33a"
@@ -45,6 +54,16 @@
             <img src="@/assets/icons/linkedin.png" alt="linkedin" />
           </a>
         </div>
+        <a
+          href="@/assets/cv.pdf"
+          class="download-cv"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          @click="CV"
+        >
+          Download CV
+        </a>
       </div>
       <div class="hero-image-container" :class="{ 'animate-in': isVisible }">
         <img :src="profileImage" alt="profile" class="profile-img" />
@@ -55,6 +74,7 @@
 
 <script setup>
 import profileImage from "@/assets/profil.jpg";
+import Swal from "sweetalert2";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 
 const isVisible = ref(false);
@@ -84,6 +104,16 @@ onMounted(() => {
 onBeforeUnmount(() => {
   if (observer) observer.disconnect();
 });
+
+function CV() {
+  Swal.fire({
+    title: "Patience !",
+    text: "Le bouton n’est pas encore fonctionnel...",
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: () => Swal.showLoading(),
+  });
+}
 </script>
 
 <style scoped>
@@ -116,7 +146,7 @@ onBeforeUnmount(() => {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   text-align: center;
   padding-top: 5rem;
@@ -233,5 +263,25 @@ onBeforeUnmount(() => {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #ffc107;
+}
+
+/*btn*/
+.download-cv {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #121212;
+  background-color: #ffc107;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.download-cv:hover {
+  background-color: #e6ac00;
+  color: #fff;
+  transform: translateY(-3px);
 }
 </style>

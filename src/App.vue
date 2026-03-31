@@ -1,8 +1,8 @@
 <template>
   <div class="overflow-hidden bg-dark text-light min-vh-100 position-relative">
     <Navbar />
-    <Accueil />
     <HeroSection />
+    <About />
     <Skills />
     <Projet />
     <Contact />
@@ -11,7 +11,7 @@
 
 <script setup>
 import { onMounted, onUnmounted } from "vue";
-import Accueil from "./components/Accueil.vue";
+import About from "./components/About.vue";
 import Contact from "./components/Contact.vue";
 import HeroSection from "./components/HeroSection.vue";
 import Navbar from "./components/nav_bar.vue";
