@@ -55,9 +55,6 @@
                 <span>#Java</span>
                 <span>#PostgreSql</span>
               </div>
-              <div class="links">
-                <a href="#" target="_blank">View Code</a>
-              </div>
             </div>
           </div>
         </swiper-slide>
@@ -85,78 +82,70 @@
                 <a
                   href="https://portfolio-princy-razafindrainibe.vercel.app/"
                   target="_blank"
+                  translate="no"
                   >Live Demo</a
                 >
                 <a
                   href="https://github.com/PrincyRazafy/Portfolio.git"
                   target="_blank"
+                  translate="no"
                   >View Code</a
                 >
               </div>
             </div>
           </div>
         </swiper-slide>
-        <!-- eductrack -->
+        <!-- phone -->
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
               <img
-                src="@/assets/LLRA.png"
-                alt="EducTrack"
+                src="@/assets/csharp.jpg"
+                alt="mobilix"
                 class="object-cover w-full h-full"
               />
             </div>
             <div class="card-content">
-              <h3>EducTrack</h3>
-              <p>
-                Application desktop dédiée à la gestion scolaire du Lycée
-                Loterana Rakoto Andrianarijaona (LLRA).
-              </p>
+              <h3>Mobilix</h3>
+              <p>Application desktop de commande et livraison de téléphones.</p>
               <div class="tags">
-                <span>#Java</span>
-                <span>#PostgreSql</span>
-              </div>
-              <div class="links">
-                <a href="#" target="_blank">View Code</a>
-              </div>
-            </div>
-          </div>
-        </swiper-slide>
-        <!-- Portfolio -->
-        <swiper-slide class="project-slide">
-          <div class="card">
-            <div class="card-image">
-              <img
-                src="@/assets/portfolio.png"
-                alt="Portfolio"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Portfolio Personnel</h3>
-              <p>
-                Portfolio personnel moderne et animé présentant mes compétences
-                et projets.
-              </p>
-              <div class="tags">
-                <span>#Vue.js</span>
-                <span>#Tailwind CSS</span>
+                <span>#Csharp</span>
+                <span>#MySql</span>
               </div>
               <div class="links">
                 <a
-                  href="https://portfolio-princy-razafindrainibe.vercel.app/"
+                  href="https://github.com/PrincyRazafy/Commande_Livraison_telephone.git"
                   target="_blank"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/PrincyRazafy/Portfolio.git"
-                  target="_blank"
+                  translate="no"
                   >View Code</a
                 >
               </div>
             </div>
           </div>
         </swiper-slide>
+        <!-- SIGAC -->
+        <swiper-slide class="project-slide">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="@/assets/SIGAC.png"
+                alt="SIGAC"
+                class="object-contain w-full h-full"
+              />
+            </div>
+            <div class="card-content">
+              <h3>SIGAC</h3>
+              <p>
+                Application web dédiée à la gestion des absences et congés du
+                SRB-HM.
+              </p>
+              <div class="tags">
+                <span>#React</span>
+                <span>#Laravel</span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
         <!-- Portfolio -->
         <swiper-slide class="project-slide">
           <div class="card">
@@ -181,11 +170,13 @@
                 <a
                   href="https://portfolio-princy-razafindrainibe.vercel.app/"
                   target="_blank"
+                  translate="no"
                   >Live Demo</a
                 >
                 <a
                   href="https://github.com/PrincyRazafy/Portfolio.git"
                   target="_blank"
+                  translate="no"
                   >View Code</a
                 >
               </div>
@@ -238,7 +229,7 @@ const modules = [Navigation, EffectCoverflow, Autoplay];
 .swiper-container {
   position: relative;
   z-index: 1;
-  padding: 0 1.5rem; /* mobile */
+  padding: 0 1.5rem;
 }
 
 @media (min-width: 640px) {
@@ -258,7 +249,7 @@ const modules = [Navigation, EffectCoverflow, Autoplay];
   padding: 3rem 0;
 }
 
-/* Cartes responsive */
+/* resp */
 .project-slide {
   width: 280px !important;
   height: 420px;
@@ -415,7 +406,6 @@ const modules = [Navigation, EffectCoverflow, Autoplay];
   width: 100%;
 }
 
-/* Flèches responsive */
 .swiper-button-prev,
 .swiper-button-next {
   width: 48px;

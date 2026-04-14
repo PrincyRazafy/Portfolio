@@ -6,6 +6,7 @@
     <Skills />
     <Projet />
     <Contact />
+    <foot />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import { onMounted, onUnmounted } from "vue";
 import About from "./components/About.vue";
 import Contact from "./components/Contact.vue";
+import foot from "./components/footer.vue";
 import HeroSection from "./components/HeroSection.vue";
 import Navbar from "./components/nav_bar.vue";
 import Projet from "./components/Projet.vue";

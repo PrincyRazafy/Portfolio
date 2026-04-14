@@ -37,16 +37,11 @@
           >
             <img src="@/assets/icons/github.png" alt="github" />
           </a>
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=princyyrazafindrainibe@gmail.com"
-            class="social-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="mailto:princyrazafindrainibee@gmail.com" class="social-link">
             <img src="@/assets/icons/gmail.png" alt="gmail" />
           </a>
           <a
-            href="www.linkedin.com/in/princy-razafy-981b3a33a"
+            href="https://www.linkedin.com/in/princy-razafindrainibe-981b3a33a/"
             class="social-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,7 +59,7 @@
 </template>
 
 <script setup>
-import profileImage from "@/assets/profil.jpg";
+import profileImage from "@/assets/profil3.png";
 import Swal from "sweetalert2";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 

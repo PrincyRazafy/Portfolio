@@ -12,7 +12,6 @@
       </div>
 
       <div class="row g-5 align-items-start">
-        <!-- Colonne des infos contact -->
         <div class="col-lg-5">
           <div class="gap-5 d-flex flex-column">
             <div class="info-item d-flex align-items-center">
@@ -22,7 +21,7 @@
               <div>
                 <h5 class="mb-1 text-white fw-semibold">Email</h5>
                 <p class="mb-0 text-white-60">
-                  princyyrazafindrainibe@gmail.com
+                  princyrazafindrainibee@gmail.com
                 </p>
               </div>
             </div>
@@ -122,7 +121,7 @@
 </template>
 
 <script setup>
-import emailjs from "@emailjs/browser"; // Changement uniquement ici
+import emailjs from "@emailjs/browser"; 
 import Swal from "sweetalert2";
 import { ref } from "vue";
 
@@ -141,7 +140,7 @@ const submitForm = async () => {
         email: form.value.email,
         message: form.value.message,
       },
-      "GDSgQSggUY5Cmgu63", // Public key
+      "GDSgQSggUY5Cmgu63", 
     );
 
     Swal.fire({

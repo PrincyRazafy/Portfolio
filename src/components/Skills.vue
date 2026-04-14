@@ -2,8 +2,10 @@
   <section
     id="skills"
     ref="skillsSection"
-    class="flex flex-col items-center justify-center w-full min-h-screen px-8 py-20 bg-slate-950"
+    class="flex flex-col items-center justify-center w-full min-h-screen px-8 py-20 skills-section"
   >
+    <div class="skills-background"></div>
+
     <h2
       class="mb-16 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
       :class="{ 'animate-fade-in': isVisible }"
@@ -94,6 +96,34 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+.skills-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.skills-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 30% 60%,
+      rgba(0, 171, 240, 0.25),
+      transparent 50%
+    ),
+    radial-gradient(circle at 70% 30%, rgba(255, 193, 7, 0.2), transparent 50%);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.skills-section > *:not(.skills-background) {
+  position: relative;
+  z-index: 1;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
