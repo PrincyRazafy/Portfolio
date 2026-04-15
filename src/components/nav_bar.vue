@@ -1,15 +1,26 @@
 <template>
   <nav
-    class="px-4 navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom fixed-lg-top"
+    class="px-2 px-lg-4 navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom fixed-lg-top"
   >
-    <div class="container-fluid d-flex justify-content-between">
-      <button class="btn btn-outline-light me-3" @click="CV">
+    <div
+      class="container-fluid d-flex justify-content-between flex-nowrap align-items-center"
+    >
+      <button
+        class="flex-shrink-0 btn btn-outline-light me-2 me-lg-3"
+        @click="CV"
+      >
         <span class="d-none d-lg-inline">Download CV</span>
         <span class="d-inline d-lg-none">CV</span>
       </button>
 
-      <ul class="flex-row gap-3 navbar-nav ms-auto d-flex">
-        <li v-for="item in filteredItems" :key="item.href" class="nav-item">
+      <ul
+        class="flex-row gap-2 overflow-x-auto gap-lg-3 navbar-nav ms-auto d-flex flex-nowrap align-items-center hide-scrollbar"
+      >
+        <li
+          v-for="item in filteredItems"
+          :key="item.href"
+          class="nav-item text-nowrap"
+        >
           <a class="nav-link" :href="item.href">
             {{ item.label }}
           </a>
@@ -27,7 +38,7 @@ const navItems = [
   { label: "Accueil", href: "#accueil" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Projet", href: "#projet" },
+  { label: "Project", href: "#projet" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -54,7 +65,6 @@ onUnmounted(() => {
 
 const filteredItems = computed(() => {
   if (!isMobile.value) return navItems;
-
   return navItems.filter((item) => item.href !== activeHash.value);
 });
 
@@ -82,6 +92,15 @@ function CV() {
     top: 0 !important;
     bottom: auto !important;
   }
+}
+
+/* scroll */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* color: #ffe082 !important; */

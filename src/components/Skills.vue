@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
 .skills-section {
   position: relative;
   overflow: hidden;
-  background-color: #121212;
+  background-color: rgb(78, 72, 72);
 }
 
 .skills-background {
@@ -111,10 +111,10 @@ onBeforeUnmount(() => {
   background:
     radial-gradient(
       circle at 30% 60%,
-      rgba(0, 171, 240, 0.25),
+      rgba(3, 146, 202, 0.25),
       transparent 50%
     ),
-    radial-gradient(circle at 70% 30%, rgba(255, 193, 7, 0.2), transparent 50%);
+    radial-gradient(circle at 70% 30%, rgba(238, 182, 14, 0.2), transparent 50%);
   filter: blur(100px);
   z-index: 0;
 }
