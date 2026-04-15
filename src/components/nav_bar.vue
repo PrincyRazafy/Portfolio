@@ -1,27 +1,29 @@
 <template>
   <nav
-    class="px-2 px-lg-4 navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom fixed-lg-top"
+    class="navbar navbar-expand-lg fixed-top"
+    :class="{ 'navbar-scrolled': isScrolled }"
   >
     <div
-      class="container-fluid d-flex justify-content-between flex-nowrap align-items-center"
+      class="px-3 container-fluid d-flex justify-content-between flex-nowrap align-items-center px-lg-5"
     >
-      <button
-        class="flex-shrink-0 btn btn-outline-light me-2 me-lg-3"
-        @click="CV"
-      >
+      <button class="flex-shrink-0 btn btn-outline-light me-3" @click="CV">
         <span class="d-none d-lg-inline">Download CV</span>
         <span class="d-inline d-lg-none">CV</span>
       </button>
 
       <ul
-        class="flex-row gap-2 overflow-x-auto gap-lg-3 navbar-nav ms-auto d-flex flex-nowrap align-items-center hide-scrollbar"
+        class="flex-row gap-2 overflow-x-auto navbar-nav ms-auto gap-lg-4 hide-scrollbar"
       >
         <li
-          v-for="item in filteredItems"
+          v-for="item in navItems"
           :key="item.href"
           class="nav-item text-nowrap"
         >
-          <a class="nav-link" :href="item.href">
+          <a
+            class="nav-link"
+            :href="item.href"
+            :class="{ active: activeSection === item.href }"
+          >
             {{ item.label }}
           </a>
         </li>
@@ -32,46 +34,76 @@
 
 <script setup>
 import Swal from "sweetalert2";
-import { computed, onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 const navItems = [
-  { label: "Accueil", href: "#accueil" },
+  { label: "Home", href: "#accueil" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Project", href: "#projet" },
+  { label: "Projects", href: "#projet" },
   { label: "Contact", href: "#contact" },
 ];
 
-const activeHash = ref(window.location.hash || "#accueil");
-const isMobile = ref(window.innerWidth < 992);
+const activeSection = ref("#accueil");
+const isScrolled = ref(false);
 
-const handleResize = () => {
-  isMobile.value = window.innerWidth < 992;
+let ticking = false;
+
+// detection de la section active et changement de style de la navbar au scroll
+const updateActiveSection = () => {
+  const sections = navItems.map((item) => item.href.replace("#", ""));
+  let current = "#accueil";
+
+  for (const sectionId of sections) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const rect = element.getBoundingClientRect();
+
+      if (rect.top <= 150 && rect.bottom >= 100) {
+        current = "#" + sectionId;
+        break;
+      }
+    }
+  }
+
+  activeSection.value = current;
+};
+
+const handleScroll = () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateActiveSection();
+      isScrolled.value = window.scrollY > 50;
+      ticking = false;
+    });
+    ticking = true;
+  }
 };
 
 const handleHashChange = () => {
-  activeHash.value = window.location.hash;
+  activeSection.value = window.location.hash || "#accueil";
 };
 
 onMounted(() => {
-  window.addEventListener("resize", handleResize);
+  window.addEventListener("scroll", handleScroll, { passive: true });
   window.addEventListener("hashchange", handleHashChange);
+
+  // Vérification initiale
+  setTimeout(() => {
+    updateActiveSection();
+    isScrolled.value = window.scrollY > 50;
+  }, 300);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("resize", handleResize);
+  window.removeEventListener("scroll", handleScroll);
   window.removeEventListener("hashchange", handleHashChange);
-});
-
-const filteredItems = computed(() => {
-  if (!isMobile.value) return navItems;
-  return navItems.filter((item) => item.href !== activeHash.value);
 });
 
 function CV() {
   Swal.fire({
     title: "Patience !",
-    text: "Le bouton n’est pas encore fonctionnel...",
+    text: "Le CV sera bientôt disponible",
     timer: 2000,
     timerProgressBar: true,
     didOpen: () => Swal.showLoading(),
@@ -80,21 +112,52 @@ function CV() {
 </script>
 
 <style scoped>
+.navbar {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+  z-index: 1030;
+  padding: 0.8rem 0;
+}
+
+.navbar-scrolled {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+}
+
+.nav-link {
+  color: #e0e0e0 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffc107 !important;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffc107;
+}
+
 @media (max-width: 991.98px) {
   .navbar {
+    position: fixed !important;
     top: auto !important;
     bottom: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
   }
 }
 
-@media (min-width: 992px) {
-  .navbar {
-    top: 0 !important;
-    bottom: auto !important;
-  }
-}
-
-/* scroll */
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -102,7 +165,4 @@ function CV() {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
-/* color: #ffe082 !important; */
-/* color: #ffd700 !important; */
 </style>

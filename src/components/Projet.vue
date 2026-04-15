@@ -6,7 +6,7 @@
     <div class="projects-background"></div>
     <br />
     <h1 class="mb-10 text-4xl title glow sm:text-5xl lg:text-6xl sm:mb-16">
-      My Projects
+      Mes projets
     </h1>
 
     <div class="w-full swiper-container">

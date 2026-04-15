@@ -8,16 +8,18 @@
     <div class="hero-background"></div>
     <div class="container hero-content">
       <div class="hero-text" :class="{ 'animate-in': isVisible }">
-        <h1 class="display-4 fw-bold">
+        <h1 class="display-4 fw-bold" translate="no">
           Hi, I'm <span class="text-warning">Princy</span>
         </h1>
         <br />
         <p class="lead">
-          Currently in my 3rd year at the National School of Informatics in
-          Fianarantsoa, I specialize in software engineering and databases.
+          Actuellement en troisième année à l'École nationale d'informatique de
+          Fianarantsoa, ​​je me spécialise en génie logiciel et bases de
+          données.
         </p>
         <p class="lead">
-          Passionate about programming, game development and robotics.
+          Passionné par la programmation, le développement de jeux et la
+          robotique.
         </p>
         <br />
         <div class="social-links">
@@ -49,7 +51,7 @@
             <img src="@/assets/icons/linkedin.png" alt="linkedin" />
           </a>
         </div>
-        <a class="download-cv" @click="CV"> Download CV </a>
+        <a class="download-cv" @click="CV"> Télécharger le CV </a>
       </div>
       <div class="hero-image-container" :class="{ 'animate-in': isVisible }">
         <img :src="profileImage" alt="profile" class="profile-img" />
@@ -94,7 +96,7 @@ onBeforeUnmount(() => {
 function CV() {
   Swal.fire({
     title: "Patience !",
-    text: "Le bouton n’est pas encore fonctionnel...",
+    text: "Le CV sera bientôt disponible",
     timer: 2000,
     timerProgressBar: true,
     didOpen: () => Swal.showLoading(),

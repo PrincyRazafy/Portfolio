@@ -51,11 +51,7 @@
         <!-- Formulaire -->
         <div class="pb-5 col-lg-7">
           <div class="p-5 shadow-2xl glass-card p-xl-6">
-            <form
-              @submit.prevent="submitForm"
-              class="needs-validation"
-              novalidate
-            >
+            <form @submit.prevent="submitForm" class="needs-validation">
               <div class="mb-4">
                 <label for="fullName" class="text-white form-label fw-medium"
                   >Nom complet</label
@@ -121,7 +117,7 @@
 </template>
 
 <script setup>
-import emailjs from "@emailjs/browser"; 
+import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { ref } from "vue";
 
@@ -133,14 +129,14 @@ const submitForm = async () => {
 
   try {
     await emailjs.send(
-      "service_78u372d",
-      "template_13uxmgr",
+      "service_eg6fa7f",
+      "template_0gz5t7f",
       {
         fullName: form.value.fullName,
         email: form.value.email,
         message: form.value.message,
       },
-      "GDSgQSggUY5Cmgu63", 
+      "R1zvNYZPlv4GgZXQY",
     );
 
     Swal.fire({
