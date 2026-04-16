@@ -27,7 +27,7 @@
         </a>
 
         <a
-          href="mailto:princyyrazafindrainibe@gmail.com"
+          href="mailto:princyrazafindrainibee@gmail.com"
           class="lien"
           aria-label="Email"
         >
