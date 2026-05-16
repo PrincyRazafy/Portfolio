@@ -62,7 +62,6 @@
 
 <script setup>
 import profileImage from "@/assets/profil3.png";
-import Swal from "sweetalert2";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 
 const isVisible = ref(false);
@@ -94,13 +93,10 @@ onBeforeUnmount(() => {
 });
 
 function CV() {
-  Swal.fire({
-    title: "Patience !",
-    text: "Le CV sera bientôt disponible",
-    timer: 2000,
-    timerProgressBar: true,
-    didOpen: () => Swal.showLoading(),
-  });
+  const link = document.createElement("a");
+  link.href = "/CV_Razafindrainibe_Princy.pdf";
+  link.download = "CV_Razafindrainibe_Princy.pdf";
+  link.click();
 }
 </script>
 

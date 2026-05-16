@@ -33,7 +33,6 @@
 </template>
 
 <script setup>
-import Swal from "sweetalert2";
 import { onMounted, onUnmounted, ref } from "vue";
 
 const navItems = [
@@ -101,12 +100,23 @@ onUnmounted(() => {
 });
 
 function CV() {
+  const link = document.createElement("a");
+  link.href = "/CV_Razafindrainibe_Princy.pdf";
+  link.download = "CV_Razafindrainibe_Princy.pdf";
+  link.click();
+
   Swal.fire({
-    title: "Patience !",
-    text: "Le CV sera bientôt disponible",
-    timer: 2000,
+    icon: "success",
+    title: "Téléchargement lancé !",
+    text: "Le CV est en cours de téléchargement.",
+    toast: true,
+    position: "top-end",
+    timer: 3000,
     timerProgressBar: true,
-    didOpen: () => Swal.showLoading(),
+    showConfirmButton: false,
+    background: "#1aae8d",
+    color: "#fff",
+    iconColor: "#fff",
   });
 }
 </script>
