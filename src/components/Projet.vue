@@ -39,6 +39,7 @@
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
+              <span class="badge-status badge-stage">Privé</span>
               <img
                 src="@/assets/LLRA.png"
                 alt="EducTrack"
@@ -62,6 +63,7 @@
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
+              <span class="badge-status badge-public">Public</span>
               <img
                 src="@/assets/portfolio.png"
                 alt="Portfolio"
@@ -85,6 +87,7 @@
                   translate="no"
                   >Live Demo</a
                 >
+
                 <a
                   href="https://github.com/PrincyRazafy/Portfolio.git"
                   target="_blank"
@@ -99,6 +102,7 @@
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
+              <span class="badge-status badge-public">Public</span>
               <img
                 src="@/assets/csharp.jpg"
                 alt="mobilix"
@@ -127,6 +131,7 @@
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
+              <span class="badge-status badge-private">Stage</span>
               <img
                 src="@/assets/SIGAC.png"
                 alt="SIGAC"
@@ -146,35 +151,29 @@
             </div>
           </div>
         </swiper-slide>
-        <!-- Portfolio -->
+        <!-- mova -->
         <swiper-slide class="project-slide">
           <div class="card">
             <div class="card-image">
+              <span class="badge-status badge-public">Public</span>
               <img
-                src="@/assets/portfolio.png"
+                src="@/assets/mova.png"
                 alt="Portfolio"
                 class="object-cover w-full h-full"
               />
             </div>
             <div class="card-content">
-              <h3>Portfolio Personnel</h3>
+              <h3>MOVA</h3>
               <p>
-                Portfolio personnel moderne et animé présentant mes compétences
-                et projets.
+                C'esy une application web de gestion de location de voitures.
               </p>
               <div class="tags">
-                <span>#Vue.js</span>
-                <span>#Tailwind CSS</span>
+                <span>#Reactjs</span>
+                <span>#Expressjs</span>
               </div>
               <div class="links">
                 <a
-                  href="https://portfolio-princy-razafindrainibe.vercel.app/"
-                  target="_blank"
-                  translate="no"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/PrincyRazafy/Portfolio.git"
+                  href="https://github.com/PrincyRazafy/Mova.git"
                   target="_blank"
                   translate="no"
                   >View Code</a
@@ -301,10 +300,52 @@ const modules = [Navigation, EffectCoverflow, Autoplay];
 }
 
 .card-image {
+  position: relative;
   height: 60%;
   background-size: cover;
   background-position: center;
 }
+
+.badge-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.badge-public {
+  background: rgba(34, 197, 94, 0.85);
+  color: #fff;
+}
+
+.badge-private {
+  background: rgba(239, 68, 68, 0.85);
+  color: #fff;
+}
+
+.badge-stage {
+  background: rgba(245, 158, 11, 0.9);
+  color: #1a1a1a;
+}
+
+@media (min-width: 1024px) {
+  .badge-status {
+    top: 18px;
+    right: 18px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.85rem;
+  }
+}
+
 .card-content {
   padding: 1.5rem;
   flex-grow: 1;

@@ -10,7 +10,7 @@
       class="mb-16 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
       :class="{ 'animate-fade-in': isVisible }"
     >
-      J'ai de l'expérience avec ces technologies :
+      Technologies et outils maîtrisés
     </h2>
 
     <div class="flex flex-wrap justify-center max-w-5xl gap-10 md:gap-12">

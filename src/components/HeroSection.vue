@@ -261,6 +261,7 @@ function CV() {
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .download-cv:hover {

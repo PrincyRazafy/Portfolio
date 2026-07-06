@@ -6,7 +6,7 @@
     <div
       class="px-3 container-fluid d-flex justify-content-between flex-nowrap align-items-center px-lg-5"
     >
-      <button class="flex-shrink-0 btn btn-outline-light me-3" @click="CV">
+      <button class="flex-shrink-0 btn btn-cv me-3" @click="CV">
         <span class="d-none d-lg-inline">Download CV</span>
         <span class="d-inline d-lg-none">CV</span>
       </button>
@@ -104,20 +104,6 @@ function CV() {
   link.href = "/CV_Razafindrainibe_Princy.pdf";
   link.download = "CV_Razafindrainibe_Princy.pdf";
   link.click();
-
-  Swal.fire({
-    icon: "success",
-    title: "Téléchargement lancé !",
-    text: "Le CV est en cours de téléchargement.",
-    toast: true,
-    position: "top-end",
-    timer: 3000,
-    timerProgressBar: true,
-    showConfirmButton: false,
-    background: "#1aae8d",
-    color: "#fff",
-    iconColor: "#fff",
-  });
 }
 </script>
 
@@ -134,6 +120,21 @@ function CV() {
 .navbar-scrolled {
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(16px);
+}
+
+.btn-cv {
+  color: #ffc107;
+  font-weight: 500;
+  border: 1px solid #ffc107;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-cv:hover,
+.btn-cv:focus {
+  background: #ffc107;
+  color: #121212;
+  border-color: #ffc107;
 }
 
 .nav-link {
