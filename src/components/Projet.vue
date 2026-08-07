@@ -105,24 +105,23 @@
               <span class="badge-status badge-public">Public</span>
               <img
                 src="@/assets/csharp.jpg"
-                alt="mobilix"
+                alt="CIVC"
                 class="object-cover w-full h-full"
               />
             </div>
             <div class="card-content">
-              <h3>Mobilix</h3>
-              <p>Application desktop de commande et livraison de téléphones.</p>
+              <h3>CIVC</h3>
+              <p>
+                Une application mobile d'IA et de reconnaissance d'image pour
+                scanner un papier d'identité utilise l'OCR pour extraire les
+                données et remplir un formulaire.
+              </p>
               <div class="tags">
-                <span>#Csharp</span>
-                <span>#MySql</span>
+                <span>#Flutter</span>
+                <span>#Google ML Kit</span>
               </div>
               <div class="links">
-                <a
-                  href="https://github.com/PrincyRazafy/Commande_Livraison_telephone.git"
-                  target="_blank"
-                  translate="no"
-                  >View Code</a
-                >
+                <a href="" target="_blank" translate="no">View Code</a>
               </div>
             </div>
           </div>
